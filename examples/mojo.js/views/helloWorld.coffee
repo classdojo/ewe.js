@@ -6,7 +6,7 @@ define ["mojo",
     helloWorldV1Template) ->
 
   # create the test
-  helloWorldTemplateTest = ab.test("hello world test").
+  helloWorldTemplateTest = ab.account.test("hello world test").
   control("hello world control", helloWorldControlTemplate).
   variant("hello world v1", helloWorldV1Template)
 
