@@ -1,4 +1,4 @@
-## ewe.js |yo͞o|
+## ewe.js (yo͞o)
 
 
 a/b testing for the front-end
