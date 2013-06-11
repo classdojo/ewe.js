@@ -9,7 +9,7 @@ a/b testing for the front-end
 ```javascript
 
 
-var ewe = require("ewe")();
+var ewe = require("ewe");
 
 
 //pick the ab test service
@@ -96,6 +96,10 @@ the test variation
 #### value test.select([variationName])
 
 selects a variation, and returns the given value.
+
+#### value test.control()
+
+returns the control test
 
 `variationName` - (optional) the variation to select
 
