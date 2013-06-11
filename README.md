@@ -23,20 +23,14 @@ ewe.use({
 
 
 //create a new AB test case
-launchpadTest = ewe.test("launchpad", {
-  showHud: {
-    value: showHudV1,
-    weight: 1
-  },
-  showHudV2: {
-    value: showHudV2,
-    weight: 3
-  }
-});
+launchpadTest = ewe.test("launchpad").
+  control("show hud", showHudV1).
+  variant("show hud 2", showHudV2);
 
 ewe.load(function() {
-  //all the function 
-  launchpadTest.value().call();
+  
+  //select a random variation, call the returned function.
+  launchpadTest.select().call();
 })
 
 
@@ -75,15 +69,32 @@ service to use
 
 loads the test information for the given user
 
-#### test ewe.test(name, options) 
+#### test ewe.test(name) 
 
 creates a new test case, or returns a given test if it's registered.
 
 - `name` - name of the st
-- `options` - options for the test - items to pick from
-  - `[name]` - name of the variation
-    - `value` - value to return when picking
-    - `weight` - weight of the value
+
+#### test.control(name, value)
+
+the control test
+
+#### test.variant(name [, options], value)
+
+the test variation
+
+- `options` - (optional) the options for the variant
+  - `weight` - weight of the variation
+
+
+
+#### value test.select([variationName])
+
+selects a variation, and returns the given value.
+
+`variationName` - (optional) the variation to select
+
+
 
 
 #### test.success(metadata)
@@ -93,6 +104,10 @@ called after the test has succeeded
 #### test.fail(metadata)
 
 called after the test has failed
+
+### test.complete(error, success)
+
+called after error / success
 
 
 
