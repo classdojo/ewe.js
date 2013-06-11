@@ -25,7 +25,8 @@ ewe.use({
 //create a new AB test case
 launchpadTest = ewe.test("launchpad").
   control("show hud", showHudV1).
-  variant("show hud 2", showHudV2);
+  variant("show hud 2", showHudV2).
+  variant("show hud 3", { weight: 3}, showHudV3);
 
 ewe.load(function() {
   
@@ -53,6 +54,10 @@ function showHudV2() {
   //along with this
   ewe.test("launchpad").fail({ });
   console.log("ab test 2");
+}
+
+function showHudV3() {
+  
 }
 
 ```
