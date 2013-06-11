@@ -1,12 +1,12 @@
 define ["mojo", 
-  "ewe",
+  "../ab/index",
   "./helloWorld-control.pc", 
   "./helloWorld-v1.pc"], 
-  (mojo, ewe, helloWorldControlTemplate, 
+  (mojo, ab, helloWorldControlTemplate, 
     helloWorldV1Template) ->
 
   # create the test
-  helloWorldTemplateTest = ewe.test("hello world test").
+  helloWorldTemplateTest = ab.test("hello world test").
   control("hello world control", helloWorldControlTemplate).
   variant("hello world v1", helloWorldV1Template)
 

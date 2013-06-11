@@ -23,17 +23,11 @@ ewe.use({
 
 
 //create a new AB test case
-launchpadTest = ewe.test("launchpad").
+launchpadTest = ewe.identify(accountId).
+  test("launchpad").
   control("show hud", showHudV1).
   variant("show hud 2", showHudV2).
   variant("show hud 3", { weight: 3}, showHudV3);
-
-ewe.load(function() {
-  
-  //select a random variation, call the returned function.
-  launchpadTest.select().call();
-})
-
 
 
 function showHudV1() {
@@ -70,11 +64,11 @@ function showHudV3() {
 
 service to use
 
-### .load(cb)
+### identifier .identify(uniqueId)
 
-loads the test information for the given user
+Identifies a unique test with the given ID.
 
-#### test ewe.test(name) 
+#### test identifier.test(name) 
 
 creates a new test case, or returns a given test if it's registered.
 
