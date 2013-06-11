@@ -42,14 +42,14 @@ ewe.load(function() {
 
 
 function showHudV1() {
-  showHudPicker.success({
+  launchpadTest.success({
     //data
   })
   console.log("ab test 1");
 }
 
 function showHudV2() {
-  showHudPicker.fail({
+  launchpadTest.fail({
     //info about error
   });
     
