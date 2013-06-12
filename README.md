@@ -23,7 +23,7 @@ ewe.use({
 
 
 //create a new AB test case
-launchpadTest = ewe.identify(accountId).
+launchpadTest = ewe.scope(accountId).
   test("launchpad").
   control("show hud", showHudV1).
   variant("show hud 2", showHudV2).
@@ -64,7 +64,7 @@ function showHudV3() {
 
 service to use
 
-### identifier .identify(uniqueId)
+### identifier .scope(uniqueId)
 
 Identifies a unique test with the given ID.
 
