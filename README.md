@@ -23,7 +23,7 @@ ewe.use({
 
 
 //create a new AB test case
-launchpadTest = ewe.scope(accountId).
+launchpadTest = ewe.group(accountId).
   test("launchpad").
   control("show hud", showHudV1).
   variant("show hud 2", showHudV2).
@@ -64,11 +64,10 @@ function showHudV3() {
 
 service to use
 
-### identifier .scope(uniqueId)
+### group .group(uniqueId)
 
-Identifies a unique test with the given ID.
 
-#### test identifier.test(name) 
+#### test group.test(name) 
 
 creates a new test case, or returns a given test if it's registered.
 

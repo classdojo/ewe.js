@@ -5,8 +5,8 @@ class Test
   ###
   ###
 
-  constructor: (@name, @scope) ->
-    @ewe = scope.ewe
+  constructor: (@name, @group) ->
+    @ewe = group.ewe
     @_variants = []
 
   ###
@@ -16,7 +16,7 @@ class Test
   select: () ->
 
     # pick the random index based on the seed string
-    variantIndex = utils.getRandomIndex @scope.key + @name, @_variants.length, @weights()
+    variantIndex = utils.getRandomIndex @group.key + @name, @_variants.length, @weights()
 
     # fetch the variant
     variant = @_variants[variantIndex]

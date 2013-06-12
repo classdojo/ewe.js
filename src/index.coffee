@@ -1,4 +1,4 @@
-Scope = require "./scope"
+Group = require "./group"
 
 class Ewe
 
@@ -6,7 +6,7 @@ class Ewe
   ###
 
   constructor: () ->
-    @_scopes = {}
+    @_groups = {}
 
   ###
    scope identifier used to clasify exactly what variants to use. Note 
@@ -15,8 +15,8 @@ class Ewe
    ID
   ###
 
-  scope: (key) ->
-    @_scopes[key] or (@_scopes[key] = new Scope(key, @))
+  group: (key) ->
+    @_groups[key] or (@_groups[key] = new Group(key, @))
 
 
 module.exports = () -> new Ewe()
