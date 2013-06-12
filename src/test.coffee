@@ -1,6 +1,5 @@
 Variation = require "./variation"
-
-utils = require "./utils"
+utils     = require "./utils"
 
 class Test
 
