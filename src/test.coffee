@@ -75,7 +75,7 @@ class Test
   ###
 
   start: () ->
-    @ewe.service.start @_selected = @select()
+    @ewe.service.start @_selected = @select().start()
     @_selected
 
 
@@ -84,7 +84,7 @@ class Test
 
   complete: () ->
     return unless @_selected
-    @ewe.service.complete @_selected
+    @ewe.service.complete @_selected.stop()
 
 
 module.exports = Test
