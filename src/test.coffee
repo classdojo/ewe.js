@@ -1,3 +1,5 @@
+Variation = require "./variation"
+
 utils = require "./utils"
 
 class Test
@@ -66,7 +68,7 @@ class Test
     options.value = value
     options.name  = name
 
-    @_variants.push options
+    @_variants.push new Variation options, @, @group
 
     @
 
@@ -74,12 +76,16 @@ class Test
   ###
 
   start: () ->
+    @ewe.service.start @_selected = @select()
+    @_selected
 
 
   ###
   ###
 
   complete: () ->
+    return unless @_selected
+    @ewe.service.complete @_selected
 
 
 module.exports = Test

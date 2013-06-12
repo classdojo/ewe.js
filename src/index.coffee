@@ -1,11 +1,13 @@
-Group = require "./group"
+Group    = require "./group"
+services = require "./services"
 
 class Ewe
 
   ###
   ###
 
-  constructor: () ->
+  constructor: (options = {}) ->
+    @service = new services[options.service or "optimizely"](options)
     @_groups = {}
 
   ###

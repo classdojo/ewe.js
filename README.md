@@ -30,23 +30,16 @@ launchpadTest = ewe.group(accountId).
   variant("show hud 3", { weight: 3}, showHudV3);
 
 
+variation = launchpadTest.start().call();
+
+
 function showHudV1() {
-  launchpadTest.success({
-    //data
-  })
+  launchpadTest.complete();
   console.log("ab test 1");
 }
 
 function showHudV2() {
-  launchpadTest.fail({
-    //info about error
-  });
-    
-  //this is also valid
-  ewe.fail("launchpad", { })
-  
-  //along with this
-  ewe.test("launchpad").fail({ });
+  launchpadTest.complete();
   console.log("ab test 2");
 }
 
@@ -96,14 +89,7 @@ returns the control test
 
 `variationName` - (optional) the variation to select
 
-
-
-
-#### test.success(metadata)
-
-called after the test has succeeded
-
-#### test.fail(metadata)
+### test.start
 
 called after the test has failed
 
