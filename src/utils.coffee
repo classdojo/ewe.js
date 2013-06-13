@@ -19,7 +19,7 @@ exports.strToIntHash = (str) ->
  picks a index based on the seed, and weight
 ###
 
-exports.getRandomIndex = (seed, max, weight) ->
+exports.getRandomIndex = (seed, weight) ->
 
   # if the weight is [3, 1, 1], then dist will be
   # [0, 0, 0, 1, 2] 

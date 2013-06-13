@@ -17,7 +17,7 @@ class Test
   select: () ->
 
     # pick the random index based on the seed string
-    variantIndex = utils.getRandomIndex @group.key + @name, @_variants.length, @weights()
+    variantIndex = utils.getRandomIndex @group.key + @name, @weights()
 
     # fetch the variant
     variant = @_variants[variantIndex]
