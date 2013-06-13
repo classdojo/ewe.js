@@ -20,7 +20,6 @@ exports.strToIntHash = (str) ->
 ###
 
 exports.getRandomIndex = (seed, max, weight) ->
-  n = (hash = exports.strToIntHash(seed)) % max
 
   # if the weight is [3, 1, 1], then dist will be
   # [0, 0, 0, 1, 2] 
@@ -30,4 +29,4 @@ exports.getRandomIndex = (seed, max, weight) ->
     for j in [0..v-1] 
       dist.push i
 
-  dist[hash % dist.length]
+  dist[exports.strToIntHash(seed) % dist.length]
