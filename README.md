@@ -1,4 +1,5 @@
-## ewe.js (yo͞o)
+## ewe.js (yo͞o) [![Alt ci](https://travis-ci.org/classdojo/ewe.js.png)](https://travis-ci.org/classdojo/ewe.js)
+
 
 
 a/b testing for the front-end
